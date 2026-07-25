@@ -1,0 +1,32 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: macos-latest
+    steps:
+      - name: Tap this repository
+        run: brew tap theatrus/seiza "https://github.com/${GITHUB_REPOSITORY}"
+
+      - name: Check out the pushed revision into the tap
+        run: |
+          cd "$(brew --repository theatrus/seiza)"
+          git fetch origin "$GITHUB_SHA"
+          git checkout "$GITHUB_SHA"
+
+      - name: Audit formula and cask style
+        run: |
+          brew style theatrus/seiza
+          brew audit --tap theatrus/seiza
+
+      - name: Build and test the formula
+        run: |
+          brew install --build-from-source theatrus/seiza/seiza
+          brew test theatrus/seiza/seiza
