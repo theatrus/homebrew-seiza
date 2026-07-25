@@ -1,6 +1,6 @@
 cask "seiza-mac" do
-  version "0.4.0"
-  sha256 "d7d93791f233b8ff14c95f56ae4dc9ce10a959b6515b906d5c8cb91eb4e21aae"
+  version "0.4.1"
+  sha256 "fd8e6b3b283efccd9f4a4f4de15e279893f8b9fa85bb5e609f51c40c481f4b00"
 
   url "https://github.com/theatrus/seiza-mac/releases/download/v#{version}/Seiza-#{version}-universal.dmg"
   name "Seiza for Mac"
@@ -12,6 +12,7 @@ cask "seiza-mac" do
     strategy :github_latest
   end
 
+  auto_updates true
   depends_on macos: :sequoia
 
   app "Seiza.app"
