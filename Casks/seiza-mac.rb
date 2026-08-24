@@ -1,6 +1,6 @@
 cask "seiza-mac" do
-  version "0.7.0"
-  sha256 "19228e4555849608b684e28198ea1747b0ed7a5d4136889f9cecca9610a0a5c6"
+  version "0.7.1"
+  sha256 "8ab5de08dd999bd4d904366828e8f02e58f05aeb97f319ad061084cd86482566"
 
   url "https://github.com/theatrus/seiza-mac/releases/download/v#{version}/Seiza-#{version}-universal.dmg"
   name "Seiza for Mac"
