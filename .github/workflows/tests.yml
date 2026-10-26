@@ -21,10 +21,16 @@ jobs:
           git fetch origin "$GITHUB_SHA"
           git checkout "$GITHUB_SHA"
 
+      - name: Trust only the audited formula and cask
+        run: |
+          brew trust --formula theatrus/seiza/seiza
+          brew trust --cask theatrus/seiza/seiza-mac
+
       - name: Audit formula and cask style
         run: |
           brew style theatrus/seiza
-          brew audit --tap theatrus/seiza
+          brew audit --formula theatrus/seiza/seiza
+          brew audit --cask theatrus/seiza/seiza-mac
 
       - name: Check whether the formula changed
         id: formula
