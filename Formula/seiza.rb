@@ -1,8 +1,8 @@
 class Seiza < Formula
   desc "Astronomical plate solver, star detection, and catalog tools"
   homepage "https://github.com/theatrus/seiza"
-  url "https://github.com/theatrus/seiza/archive/refs/tags/v0.48.1.tar.gz"
-  sha256 "078b82f553c7d2e5444279ccdec27fbccc1cba719cabcf79231b4b36dffa6211"
+  url "https://github.com/theatrus/seiza/archive/refs/tags/v0.50.0.tar.gz"
+  sha256 "e5ab9204cd0747970b7480662027b02ed4368785e2042e0851c6f1c1c2aa2666"
   license "Apache-2.0"
   head "https://github.com/theatrus/seiza.git", branch: "main"
 
@@ -14,6 +14,7 @@ class Seiza < Formula
   end
 
   depends_on "rust" => :build
+  depends_on "onnxruntime"
 
   def install
     system "cargo", "install", *std_cargo_args(path: "seiza-cli")
