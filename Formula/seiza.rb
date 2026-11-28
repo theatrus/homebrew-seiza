@@ -1,8 +1,8 @@
 class Seiza < Formula
   desc "Astronomical plate solver, star detection, and catalog tools"
   homepage "https://github.com/theatrus/seiza"
-  url "https://github.com/theatrus/seiza/archive/refs/tags/v0.57.0.tar.gz"
-  sha256 "dc45875801392b85a8a9b7c0f9cc43c1dde3cd1bc65b7e1e876cb4bcb3b36e49"
+  url "https://github.com/theatrus/seiza/archive/refs/tags/v0.58.0.tar.gz"
+  sha256 "40d7d7f90e0c3597f70f458bbf0f2ebcf0200ec2d19b1c715745d80fa800c17a"
   license "Apache-2.0"
   head "https://github.com/theatrus/seiza.git", branch: "main"
 
